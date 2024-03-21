@@ -6,7 +6,7 @@
 /*   By: alvdelga <alvdelga@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 13:10:31 by alvdelga          #+#    #+#             */
-/*   Updated: 2024/03/21 13:19:57 by alvdelga         ###   ########.fr       */
+/*   Updated: 2024/03/21 17:25:15 by alvdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,24 +17,25 @@
 char	*ft_strrchr(const char *str, int c)
 {
 	int flag;
-	int ocurrence;
-	int longitud;
+	int ocurrencia;
+	int i;
 
 	flag = 0;
-	ocurrence = 0;
-	longitud = 0;
+	ocurrencia = 0;
+	i = 0;
 
-	while (str[longitud])
+	while (str[i] != '\0')
 	{
-		if (str[longitud] == (unsigned char)c)
+		if (str[i] == (unsigned char)c)
 		{
 			flag = 1;
-			ocurrence = longitud;
+			ocurrencia = i;
 		}
-		longitud++;
+		i++;
 	}
 	if (flag == 1)
-		return ((char *)&str[ocurrence]);
-	if ((unsigned char)c = '\0')
-		return ((char *)&str[longitud]);
+		return ((char *)&str[ocurrencia]);
+	if ((unsigned char)c == '\0')
+	   return ((char *)&str[i]);
+	return (NULL);	
 }
