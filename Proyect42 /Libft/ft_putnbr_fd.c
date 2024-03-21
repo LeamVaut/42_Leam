@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alvdelga <alvdelga@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/11 15:32:11 by alvdelga          #+#    #+#             */
-/*   Updated: 2024/03/11 16:15:01 by alvdelga         ###   ########.fr       */
+/*   Created: 2024/03/18 19:42:55 by alvdelga          #+#    #+#             */
+/*   Updated: 2024/03/18 19:51:23 by alvdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include "libft.h"
+#include <unistd.h>
 
-void	ft_bzero(void *str, size_t n)
+void	ft_putnbr_fd(int n, int fd)
 {
-	size_t i;
+	long int	copia;
 
-	i = 0;
-	while (i < n)
+	copia = n;
+	if (copia < 0)
 	{
-		((char*)str)[i] = 0;
-		i++;
+		copia = (copia * -1);
+		write(fd, "-", 1);
 	}
+	if (copia > 9)
+	{
+		ft_putnbr_fd(copia / 10, fd);
+		ft_putchar_fd((copia % 10) + '0', fd);
+	}
+	else
+		ft_putchar_fd(copia + '0', fd);
 }
