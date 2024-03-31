@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "stdio.h"
 #include <string.h>
 #include "libft.h"
 #include <stdlib.h>
@@ -33,3 +34,16 @@ char	*ft_strdup(const char *s1)
 	d[i] = '\0';
 	return (d);
 }
+/*int main() {
+    char original[] = "Hola mundo";
+    char *copia;
+
+    copia = ft_strdup(original);
+
+    printf("Original: %s\n", original);
+    printf("Copia: %s\n", copia);
+
+    free(copia);
+
+    return 0;
+}*/
