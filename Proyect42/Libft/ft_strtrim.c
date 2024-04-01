@@ -13,7 +13,7 @@
 #include "libft.h"
 #include <stdlib.h>
 
-int	flag_guessing(char const *s1, char c)
+int	flag_verificar(char const *s1, char c)
 {
 	int	i;
 
@@ -39,9 +39,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (!s1)
 		return (NULL);
 	len = ft_strlen(s1);
-	while (flag_guessing(set, s1[i]) && s1[i])
+	while (flag_verificar(set, s1[i]) && s1[i])
 		i++;
-	while (len > 0 && flag_guessing(set, s1[len - 1]))
+	while (len > 0 && flag_verificar(set, s1[len - 1]))
 		len--;
 	if (len < i)
 		len = i;
