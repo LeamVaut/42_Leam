@@ -16,25 +16,25 @@
 
 static int	numstring(char const *s1, char c)
 {
-	int	comp;
-	int	cles;
+	int	contp;
+	int	flagM;
 
-	comp = 0;
-	cles = 0;
+	contp = 0;
+	flagM = 0;
 	if (*s1 == '\0')
 		return (0);
 	while (*s1 != '\0')
 	{
 		if (*s1 == c)
-			cles = 0;
-		else if (cles == 0)
+			flagM = 0;
+		else if (flagM == 0)
 		{
-			cles = 1;
-			comp++;
+			flagM = 1;
+			contp++;
 		}
 		s1++;
 	}
-	return (comp);
+	return (contp);
 }
 
 static int	numchar(char const *s2, char c, int i)
