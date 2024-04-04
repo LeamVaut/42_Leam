@@ -61,7 +61,7 @@ static char	**freee(char const **dst, int j)
 	return (NULL);
 }
 
-static char	**affect(char const *s, char **dst, char c, int l)
+static char	**dividir(char const *s, char **dst, char c, int l)
 {
 	int	i;
 	int	j;
@@ -97,5 +97,5 @@ char	**ft_split(char const *s, char c)
 	dst = (char **)malloc(sizeof(char *) * (l + 1));
 	if (dst == NULL)
 		return (NULL);
-	return (affect(s, dst, c, l));
+	return (dividir(s, dst, c, l));
 }
