@@ -10,75 +10,92 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdlib.h>
+#include "stdio.h"
+#include "stdlib.h"
 
-int	digit_counter(int n)
+int digit_counter(int n)
 {
-	int	i;
-	int	copy;
+  int i;
 
-	i = 0;
-	if (n == 0)
-		return (1);
-	if (n == -2147483648)
-		return (11);
-	if (n < 0)
-	{
-		n = -n;
-		i++;
-	}
-	copy = n;
-	while (copy > 0)
-	{
-		copy = copy / 10;
-		i++;
-	}
-	return (i);
+  i = 0;
+
+  if (n == 0)
+    return (1);
+  if (n == -2147483648)
+    return (11);
+  if (n < 0)
+  {
+    n = -n;
+    i++;
+  }
+  while (n > 0)
+  {
+    n = n / 10;
+    i++;
+  }
+  return (i);
 }
 
-int	exp_counter(int n)
+int exp_counter(int n)
 {
-	int	exp;
-	int	digits;
+  int exp;
+  int count;
 
-	if (n == 0)
-		return (1);
-	if (n == -2147483648)
-		return (1000000000);
-	digits = digit_counter(n);
-	if (n < 0)
-		digits--;
-	exp = 1;
-	while (--digits)
-		exp = exp * 10;
-	return (exp);
+  count = digit_counter(n);
+
+  if (n == 0)
+    return (1);
+  if (n == -2147483648)
+    return (1000000000);
+  if (n < 0)
+  {
+    count--;
+    n = -n;
+  }
+  exp = 1;
+  while (--count > 0)
+  {
+    exp = exp * 10;
+  }
+  return (exp);
+
 }
 
-char	*ft_itoa(int n)
+char *ft_itoa(int n)
 {
-	char		*str;
-	int			exp;
-	int			i;
-	long int	copy;
+  char *src;
+  long int copy;
+  int i;
+  int exp;
 
-	copy = (long int)n;
-	exp = exp_counter(n);
-	i = 0;
-	str = malloc(digit_counter(n) + 1);
-	if (!str)
-		return (NULL);
-	if (n < 0)
-	{
-		str[i++] = '-';
-		copy = -copy;
-	}
-	while (exp > 0)
-	{
-		str[i++] = (copy / exp) + 48;
-		copy = copy % exp;
-		exp = exp / 10;
-	}
-	str[i] = '\0';
-	return (str);
+  copy = n;
+  exp = exp_counter(n);
+  i = 0;
+
+  if (!(src = malloc(digit_counter(n) + 1)))
+    return (0);
+  if (copy < 0)
+  {
+    src[i++] = '-';
+    copy = -copy;
+  }
+  while (exp > 0)
+  {
+    src[i] = (copy / exp) + 48;
+    copy = copy % exp;
+    exp = exp / 10;
+    i++;
+  }
+  src[i] = '\0';
+  return (src);
+  
+}
+
+int main()
+{
+  int num;
+
+  num = -2050700;
+  printf("%s", ft_itoa(num));
+  return (0);
 }
