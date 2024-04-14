@@ -64,7 +64,7 @@ int exp_counter(int n)
 char *ft_itoa(int n)
 {
   char *src;
-  long int copy;
+  int copy;
   int i;
   int exp;
 
