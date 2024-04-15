@@ -31,16 +31,16 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	}
 	return (i);
 }
-/*int main(void) {
-    char src[] = "Hello, world!";
+int main(void) {
+    char src[] = "Hola Mundo";
     char dst[20]; 
     size_t len; 
 
     len = ft_strlcpy(dst, src, sizeof(dst)); 
 
-    printf("Cadena de origen: %s\n", src);
-    printf("Cadena de destino: %s\n", dst);
-    printf("Longitud de la cadena de origen: %zu\n", len);
+    printf("%s\n", src);
+    printf("%s\n", dst);
+    printf("%zu\n", len);
 
     return 0;
-}*/
+}
