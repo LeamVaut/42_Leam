@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include "libft.h"
+#include "stdio.h"
 
 void	ft_bzero(void *str, size_t n)
 {
@@ -23,4 +23,18 @@ void	ft_bzero(void *str, size_t n)
 		((char *)str)[i] = 0;
 		i++;
 	}
+}
+int main()
+{
+    char array[5];
+    ft_bzero(array, 5);
+
+    int i = 0;
+
+  while (i < sizeof(array))
+  {
+    printf("%s", array[i]);
+    i++;
+  }
+  return (0);
 }
