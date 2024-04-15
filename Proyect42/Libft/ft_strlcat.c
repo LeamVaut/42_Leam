@@ -29,3 +29,14 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	*(dst + cont) = '\0';
 	return (londst + lonsrc);
 }
+int main() {
+    char dst[20] = "Hello";
+    char src[] = ", World!";
+
+    size_t resultado = ft_strlcat(dst, src, sizeof(dst));
+
+    printf("%s\n", dst);
+    printf("%zu\n", resultado);
+
+    return 0;
+}
