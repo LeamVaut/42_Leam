@@ -31,3 +31,10 @@ char	*ft_strchr(const char *str, int c)
 		return ((char *)&str[i]);
 	return (NULL);
 }
+int main()
+{
+  char s[] = "Hola que tal";
+  char c =  'l';
+  char *resultado = ft_strchr(s, c);
+  printf("%s", resultado);
+}
