@@ -26,16 +26,14 @@ void	*ft_memset(void *b, int c, size_t len)
 	}
 	return (b);
 }
-/*int main() {
-    int array[5];
-   ft_memset(array, 0, sizeof(array));
+int main()
+{
+  char array[20];
 
-    // Imprimir el arreglo
-    printf("Array: ");
-    for (int i = 0; i < 5; i++) {
-        printf("%d ", array[i]);
-    }
-    printf("\n");
-
-    return 0;
-}*/
+  ft_memset(array, '0', 9);
+  array[9] = '\0';
+    
+  printf("%s", array);
+    
+  return (0);
+}
