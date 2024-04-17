@@ -6,44 +6,35 @@
 /*   By: alvdelga <alvdelga@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 18:32:32 by alvdelga          #+#    #+#             */
-/*   Updated: 2024/03/12 18:34:01 by alvdelga         ###   ########.fr       */
+/*   Updated: 2024/04/17 13:08:18 by alvdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stdio.h"
-#include <string.h>
-#include "libft.h"
+#include <stdio.h>
 #include <stdlib.h>
+#include "libft.h"
 
 char	*ft_strdup(const char *s1)
 {
-	char	*d;
-	char	*p_s1;
-	size_t	i;
+	char	*s2;
+	char	lens1;
 
-	p_s1 = (char *)s1;
-	i = 0;
-	d = (char *)malloc(ft_strlen(p_s1) + 1);
-	if (d == NULL)
+	lens1 = ft_strlen(s1);
+	s2 = malloc((lens1 + 1));
+	if (!s2)
 		return (NULL);
-	while (p_s1[i] != '\0')
+	while (*s1)
 	{
-		d[i] = p_s1[i];
-		i++;
+		*s2++ = *s1++;
 	}
-	d[i] = '\0';
-	return (d);
+	*s2 = '\0';
+	return (s2 - lens1);
 }
 /*int main() {
-    char original[] = "Hola mundo";
-    char *copia;
+    const char *original = "Hola, mundo!";
+    char *duplicado = ft_strdup(original);
 
-    copia = ft_strdup(original);
-
-    printf("Original: %s\n", original);
-    printf("Copia: %s\n", copia);
-
-    free(copia);
-
+    printf("Cadena duplicada: %s\n", duplicado);
+	free(duplicado);
     return 0;
 }*/
