@@ -6,11 +6,11 @@
 /*   By: alvdelga <alvdelga@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 18:30:10 by alvdelga          #+#    #+#             */
-/*   Updated: 2024/04/16 20:58:21 by alvdelga         ###   ########.fr       */
+/*   Updated: 2024/04/17 10:03:43 by alvdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include "libft.h"
 
@@ -33,15 +33,14 @@ void	*ft_calloc(size_t count, size_t size)
 }
 int main()
 {
-    char array[5];
-    ft_calloc(array, 5);
+    char *array = ft_calloc(5, sizeof(char));
 
     int i = 0;
 
- 	 while (i < sizeof(array))
+ 	 while (i < 5)
  	 {
-   		 printf("%s", array[i]);
+   		 printf("%u", array[i]);
    		 i++;
-	  }
+	 }
  	   return (0);
 }
