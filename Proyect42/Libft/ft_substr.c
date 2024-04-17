@@ -6,34 +6,53 @@
 /*   By: alvdelga <alvdelga@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/15 18:21:35 by alvdelga          #+#    #+#             */
-/*   Updated: 2024/04/17 13:08:50 by alvdelga         ###   ########.fr       */
+/*   Updated: 2024/04/17 15:41:08 by alvdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
-#include "stdio.h"
+
 #include "libft.h"
 
+//Reserva (con malloc(3)) y devuelve una substring de la string ’s’.
+//La substring empieza desde el índice ’start’ y tiene una longitud máx. ’len’.
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*ret;
+	char	*sub;
+	size_t	i;
 
-	if (!s || ft_strlen(s) < start)
-		return (ft_strdup(""));
-	if (ft_strlen(s + start) < len)
-		len = ft_strlen(s + start);
-	ret = malloc(sizeof(char) * (len + 1));
-	if (!ret)
-		return (0);
-	ft_strlcpy(ret, s + start, len + 1);
-	return (ret);
+	if (s == NULL)
+		return (NULL);
+	if (start >= ft_strlen(s))
+	{
+		sub = (char *)malloc(1);
+		if (sub != NULL)
+			sub[0] = '\0';
+		return (sub);
+	}
+	if (len > ft_strlen(s) - start)
+	{
+		len = ft_strlen(s) - start;
+	}
+	sub = (char *)malloc(len + 1);
+	if (sub != NULL)
+	{
+		i = 0;
+		while (i < len && s[start])
+			sub[i++] = s[start++];
+		sub[i] = '\0';
+	}
+	return (sub);
 }
-/*int	main()
+/*int	main(void)
 {
-	char s[] = "hola mundo";
-	unsigned int start = 2;
-	size_t len = 2;
+	char	*str = "En un lugar de la mancha!!";
+	char	*sub;
+	unsigned int	start = 2;
+	size_t	len = 10;
+	
+	printf("lenSTR: %zu\n", ft_strlen(str));
 
-	char *result = ft_substr(s, start, len);
+	sub = ft_substr(str, start, len);
 
-	printf("%s", result);
+	printf("%s\n", sub);
+ 	free(sub);
 }*/
