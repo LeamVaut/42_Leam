@@ -6,7 +6,7 @@
 /*   By: alvdelga <alvdelga@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 12:11:48 by alvdelga          #+#    #+#             */
-/*   Updated: 2024/03/20 10:30:18 by alvdelga         ###   ########.fr       */
+/*   Updated: 2024/04/16 15:10:37 by alvdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,6 @@ char				*ft_substr(char const *s, unsigned int start, size_t len);
 char				*ft_strmapi(char *s, char (*f)(unsigned int, char));
 char				**ft_split(char const *s, char c);
 char				*ft_strtrim(char const *s1, char const *set);
+
+void				ft_striteri(char *s, void (*f)(unsigned int, char*));
 #endif

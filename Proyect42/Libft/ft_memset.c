@@ -6,7 +6,7 @@
 /*   By: alvdelga <alvdelga@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 15:07:22 by alvdelga          #+#    #+#             */
-/*   Updated: 2024/03/15 16:02:29 by alvdelga         ###   ########.fr       */
+/*   Updated: 2024/04/16 12:52:34 by alvdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	*ft_memset(void *b, int c, size_t len)
 	}
 	return (b);
 }
-int main()
+/*int main()
 {
   char array[20];
 
@@ -36,4 +36,4 @@ int main()
   printf("%s", array);
     
   return (0);
-}
+}*/

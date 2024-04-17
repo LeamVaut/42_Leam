@@ -6,10 +6,11 @@
 /*   By: alvdelga <alvdelga@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 17:23:09 by alvdelga          #+#    #+#             */
-/*   Updated: 2024/03/12 18:14:38 by alvdelga         ###   ########.fr       */
+/*   Updated: 2024/04/16 14:03:33 by alvdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stddef.h>
 #include "libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
@@ -27,3 +28,12 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (NULL);
 }
+/*int main()
+{
+    char str[] = "Hello, world!";
+    char digit = 'o';
+    char *result = ft_memchr(str, digit, sizeof(str));
+
+	printf("%s", result);
+    return 0;
+}*/

@@ -6,7 +6,7 @@
 /*   By: alvdelga <alvdelga@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 16:01:20 by alvdelga          #+#    #+#             */
-/*   Updated: 2024/03/15 18:21:00 by alvdelga         ###   ########.fr       */
+/*   Updated: 2024/04/16 12:56:56 by alvdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -31,7 +31,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	}
 	return (i);
 }
-int main(void) {
+/*int main(void) {
     char src[] = "Hola Mundo";
     char dst[20]; 
     size_t len; 
@@ -43,4 +43,4 @@ int main(void) {
     printf("%zu\n", len);
 
     return 0;
-}
+}*/

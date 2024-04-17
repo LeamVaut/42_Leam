@@ -6,7 +6,7 @@
 /*   By: alvdelga <alvdelga@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 16:22:27 by alvdelga          #+#    #+#             */
-/*   Updated: 2024/03/18 20:55:44 by alvdelga         ###   ########.fr       */
+/*   Updated: 2024/04/16 13:44:08 by alvdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,10 @@ char	*ft_strchr(const char *str, int c)
 		return ((char *)&str[i]);
 	return (NULL);
 }
-int main()
+/*int main()
 {
   char s[] = "Hola que tal";
   char c =  'l';
   char *resultado = ft_strchr(s, c);
   printf("%s", resultado);
-}
+}*/

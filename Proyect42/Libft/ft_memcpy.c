@@ -6,7 +6,7 @@
 /*   By: alvdelga <alvdelga@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 13:23:06 by alvdelga          #+#    #+#             */
-/*   Updated: 2024/03/15 14:08:48 by alvdelga         ###   ########.fr       */
+/*   Updated: 2024/04/16 12:50:35 by alvdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,25 @@
 #include "stdio.h"
 #include "string.h"
 
-void    *ft_memcpy(void *dst, const void *src, size_t n)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-    unsigned const char *s;
-    unsigned char       *d;
-    size_t              i;
+	unsigned const char		*s;
+	unsigned char			*d;
+	size_t					i;
 
-    s = ((unsigned char *)src);
-    d = ((unsigned char *)dst);
-    i = 0;
-    while (dst == src || !n)
-        return (dst);
-    while (i < n)
-    {
-        d[i] = s[i];
-        i++;
-    }
-    return (dst);
+	s = ((unsigned char *)src);
+	d = ((unsigned char *)dst);
+	i = 0;
+	while (dst == src || !n)
+		return (dst);
+	while (i < n)
+	{
+		d[i] = s[i];
+		i++;
+	}
+	return (dst);
 }
-int main()
+/*int main()
 {
   char copia[] = "Hola mundo";
   char cadena[20];
@@ -41,4 +41,4 @@ int main()
 
   printf("%s", cadena);
   return (0);
-}
+}*/

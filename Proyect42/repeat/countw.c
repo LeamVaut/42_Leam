@@ -1,29 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   countw.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alvdelga <alvdelga@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/20 11:39:08 by alvdelga          #+#    #+#             */
-/*   Updated: 2024/04/16 15:09:03 by alvdelga         ###   ########.fr       */
+/*   Created: 2024/04/16 17:21:44 by alvdelga          #+#    #+#             */
+/*   Updated: 2024/04/16 19:43:29 by alvdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "stdio.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int,
-char*))
+int	main(int argc, char *argv[])
 {
-	int	i;
+	int i;
+	int count;
 
-	if (!s)
-		return ;
+	count = 0;
 	i = 0;
-	while (s[i] != '\0')
-	{
-		(*f)(i, &s[i]);
+	if (argc != 2)
+		return (0);
+
+	while (argv[1][i] && argv[1][i] == ' ')
 		i++;
+	while (argv[1][i] != '\0')
+	{
+		if (argv[1][i] != ' ' && argv[1][i])
+			count++;
+		while (argv[1][i] !=  ' ' && argv[1][i])
+			i++;
+		while (argv[1][i] == ' ' && argv[1][i])
+			i++;
 	}
-	s[i] = '\0';
+	printf("%d", count);
+	return (0);
 }

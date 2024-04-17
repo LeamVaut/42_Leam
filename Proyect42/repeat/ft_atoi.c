@@ -5,38 +5,45 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: alvdelga <alvdelga@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/11 11:11:34 by alvdelga          #+#    #+#             */
-/*   Updated: 2024/04/16 16:36:23 by alvdelga         ###   ########.fr       */
+/*   Created: 2024/04/16 15:13:44 by alvdelga          #+#    #+#             */
+/*   Updated: 2024/04/16 19:44:51 by alvdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
-#include <stdio.h>
+#include "stdio.h"
 
 int	ft_atoi(const char *str)
 {
-	long int	res;
-	int			negative;
-
-	negative = 1;
-	res = 0;
-	while (*str && (*str == ' ' || *str == '\n' || *str == '\t'
-			|| *str == '\v' || *str == '\f' || *str == '\r'))
-		++str;
-	if (*str == '-')
-		negative = -1;
-	if (*str == '-' || *str == '+')
-		++str;
-	while (*str && *str >= '0' && *str <= '9')
+	int i;
+	int signo;
+	int result;
+	
+	result = 0;
+	signo = 1;
+	i = 0;
+	while (str[i] && (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' || str[i] == '\v' || str[i] == '\f' || str[i] == '\r'))
+		str++;
+	if (str[i] == '-')
+		signo = -1;
+	if (str[i] == '-' || str[i] == '+')
+		str++;
+	while ((str[i] >= '0' && str[i] <= '9') && str[i] != '\0')
 	{
-		res = res * 10 + (*str - 48);
-		++str;
+		result = result * 10 + (str[i] - '0');
+		str++;
 	}
-	return (res * negative);
+	return (result * signo);
 }
-/*int		main(void)//
+int	main()
 {
-	char a[] = "    \n\n\v\f\r\t -5234AAAgreghrsth";// -5234
-	printf("%d\n",ft_atoi(a));//
-}*/
+	char *str = " \n-123";
+	int result = ft_atoi(str);
+	
+	printf("%d\n", result);
+
+	char a[] = "    \n\n\v\f\r\t -5234AAAgreghrsth";
+	printf("%d\n",ft_atoi(a));
+
+	return (0);
+}

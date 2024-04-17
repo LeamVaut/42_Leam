@@ -6,7 +6,7 @@
 /*   By: alvdelga <alvdelga@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 18:15:49 by alvdelga          #+#    #+#             */
-/*   Updated: 2024/03/12 18:17:16 by alvdelga         ###   ########.fr       */
+/*   Updated: 2024/04/16 14:14:32 by alvdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,3 +28,14 @@ int	ft_memcmp(const void *dst, const void *str, size_t n)
 				return (*(--dst2) - *(--str2));
 	return (0);
 }
+/*int	main()
+{
+	char dst[] = "hola";
+	char str[] = "hola";
+	size_t n = 4;
+
+	int result = ft_memcmp(dst, str, n);
+
+	printf("%d", result);
+	return (0);
+}*/

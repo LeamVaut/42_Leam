@@ -6,7 +6,7 @@
 /*   By: alvdelga <alvdelga@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 18:03:14 by alvdelga          #+#    #+#             */
-/*   Updated: 2024/03/18 21:07:05 by alvdelga         ###   ########.fr       */
+/*   Updated: 2024/04/16 13:46:09 by alvdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,3 +38,10 @@ char	*ft_strrchr(const char *str, int c)
 		return ((char *)&str[longitud]);
 	return (NULL);
 }
+/*int main()
+{
+  char s[] = "Hola que tal, como estas";
+  char c =  'l';
+  char *resultado = ft_strrchr(s, c);
+  printf("%s", resultado);
+}*/

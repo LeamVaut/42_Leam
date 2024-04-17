@@ -6,13 +6,14 @@
 /*   By: alvdelga <alvdelga@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 18:17:31 by alvdelga          #+#    #+#             */
-/*   Updated: 2024/03/12 18:41:30 by alvdelga         ###   ########.fr       */
+/*   Updated: 2024/04/16 14:28:21 by alvdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "string.h"
 #include <stdlib.h>
-#include <string.h>
 #include "libft.h"
+#include "stdio.h"
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
@@ -35,3 +36,13 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	}
 	return (NULL);
 }
+/*int	main()
+{
+	char haystack[] = "Una aguja en un pajar";
+	char needle[] = "aguja";
+	size_t len = strlen(haystack);	
+
+	char *result = ft_strnstr(haystack, needle, len);
+	printf("%s", result);
+	return (0);
+}*/

@@ -6,7 +6,7 @@
 /*   By: alvdelga <alvdelga@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 18:43:24 by alvdelga          #+#    #+#             */
-/*   Updated: 2024/03/12 18:45:32 by alvdelga         ###   ########.fr       */
+/*   Updated: 2024/04/16 13:51:50 by alvdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,3 +23,13 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		++i;
 	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
+/*int	main ()
+{
+	char s1[] = "Hola";
+	char s2[] = "Hola";
+
+	int result = ft_strncmp(s1, s2, sizeof(s2));
+
+	printf("%d", result);
+	return (0);
+}*/

@@ -6,7 +6,7 @@
 /*   By: alvdelga <alvdelga@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 10:26:09 by alvdelga          #+#    #+#             */
-/*   Updated: 2024/03/20 10:31:48 by alvdelga         ###   ########.fr       */
+/*   Updated: 2024/04/16 16:38:21 by alvdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,19 @@
 static int	numstring(char const *s1, char c)
 {
 	int	contp;
-	int	flagM;
+	int	flagm;
 
 	contp = 0;
-	flagM = 0;
+	flagm = 0;
 	if (*s1 == '\0')
 		return (0);
 	while (*s1 != '\0')
 	{
 		if (*s1 == c)
-			flagM = 0;
-		else if (flagM == 0)
+			flagm = 0;
+		else if (flagm == 0)
 		{
-			flagM = 1;
+			flagm = 1;
 			contp++;
 		}
 		s1++;

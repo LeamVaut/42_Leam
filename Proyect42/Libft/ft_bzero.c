@@ -6,7 +6,7 @@
 /*   By: alvdelga <alvdelga@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 15:32:11 by alvdelga          #+#    #+#             */
-/*   Updated: 2024/03/12 15:44:59 by alvdelga         ###   ########.fr       */
+/*   Updated: 2024/04/16 20:55:06 by alvdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_bzero(void *str, size_t n)
 		i++;
 	}
 }
-int main()
+/*int main()
 {
     char array[5];
     ft_bzero(array, 5);
@@ -37,4 +37,4 @@ int main()
     i++;
   }
   return (0);
-}
+}*/

@@ -6,7 +6,7 @@
 /*   By: alvdelga <alvdelga@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 16:12:11 by alvdelga          #+#    #+#             */
-/*   Updated: 2024/03/12 16:16:44 by alvdelga         ###   ########.fr       */
+/*   Updated: 2024/04/16 12:55:20 by alvdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	*(dst + cont) = '\0';
 	return (londst + lonsrc);
 }
-int main() {
+/*int main() {
     char dst[20] = "Hello";
     char src[] = ", World!";
 
@@ -39,4 +39,4 @@ int main() {
     printf("%zu\n", resultado);
 
     return 0;
-}
+}*/
