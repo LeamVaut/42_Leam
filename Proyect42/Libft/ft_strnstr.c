@@ -6,7 +6,7 @@
 /*   By: alvdelga <alvdelga@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 18:17:31 by alvdelga          #+#    #+#             */
-/*   Updated: 2024/04/16 14:28:21 by alvdelga         ###   ########.fr       */
+/*   Updated: 2024/04/17 17:04:21 by alvdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	size_t	j;
 
 	i = 0;
+	if (len == 0 && haystack == NULL)
+		return (NULL);
 	if (*needle == '\0' || needle == NULL)
 		return ((char *)haystack);
 	while (haystack[i] != '\0' && i < len)

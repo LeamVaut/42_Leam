@@ -6,14 +6,12 @@
 /*   By: alvdelga <alvdelga@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/15 18:21:35 by alvdelga          #+#    #+#             */
-/*   Updated: 2024/04/17 15:41:08 by alvdelga         ###   ########.fr       */
+/*   Updated: 2024/04/17 17:07:17 by alvdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-//Reserva (con malloc(3)) y devuelve una substring de la string ’s’.
-//La substring empieza desde el índice ’start’ y tiene una longitud máx. ’len’.
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*sub;
@@ -29,9 +27,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (sub);
 	}
 	if (len > ft_strlen(s) - start)
-	{
 		len = ft_strlen(s) - start;
-	}
 	sub = (char *)malloc(len + 1);
 	if (sub != NULL)
 	{
@@ -40,6 +36,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 			sub[i++] = s[start++];
 		sub[i] = '\0';
 	}
+	else
+		return (NULL);
 	return (sub);
 }
 /*int	main(void)
