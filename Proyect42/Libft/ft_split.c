@@ -6,7 +6,7 @@
 /*   By: alvdelga <alvdelga@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 10:26:09 by alvdelga          #+#    #+#             */
-/*   Updated: 2024/04/18 18:39:21 by alvdelga         ###   ########.fr       */
+/*   Updated: 2024/04/18 21:36:38 by alvdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ static char	**freee(char const **dst, int j)
 	return (NULL);
 }
 
-static char	**dividir(char const *s, char **dst, char c, int l)
+static char	**to_divide(char const *s, char **dst, char c, int l)
 {
 	int	i;
 	int	j;
@@ -95,9 +95,9 @@ char	**ft_split(char const *s, char c)
 	dst = (char **)malloc(sizeof(char *) * (l + 1));
 	if (dst == NULL)
 		return (NULL);
-	return (dividir(s, dst, c, l));
+	return (to_divide(s, dst, c, l));
 }
-int	main(void)
+/*int	main(void)
 {
 	char const	*s = "Hola,,,,,,,,,que,,,,tal";
 	char		c = ',';
@@ -129,4 +129,4 @@ int	main(void)
 	free(split);
 
 	return(0);
-}
+}*/

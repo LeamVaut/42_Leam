@@ -6,7 +6,7 @@
 /*   By: alvdelga <alvdelga@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 18:03:04 by alvdelga          #+#    #+#             */
-/*   Updated: 2024/03/18 18:03:12 by alvdelga         ###   ########.fr       */
+/*   Updated: 2024/04/18 22:31:45 by alvdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,3 +34,17 @@ char	*ft_strmapi(char *s, char (*f)(unsigned int, char))
 	str[len] = '\0';
 	return (str);
 }
+/*char root13(unsigned int y, char c)
+{
+	if (c <= 'M')
+		return (c + 13);
+	else if (c  > 'M')
+		return (c - 13);
+	return (0);
+}
+int main(void)
+{
+	char str [] = "PACOPAQUITO";
+	printf("%s", ft_strmapi(str, root13));
+	return (0);
+}*/
