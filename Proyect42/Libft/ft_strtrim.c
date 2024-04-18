@@ -6,19 +6,19 @@
 /*   By: alvdelga <alvdelga@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 10:25:50 by alvdelga          #+#    #+#             */
-/*   Updated: 2024/03/20 10:59:42 by alvdelga         ###   ########.fr       */
+/*   Updated: 2024/04/18 14:09:27 by alvdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-int	flag_verificar(char const *s1, char c)
+int	str_chr(char const *s1, char c)
 {
 	int	i;
 
 	i = 0;
-	while (s1 && s1[i])
+	while (s1[i])
 	{
 		if (s1[i] == c)
 			return (1);
@@ -39,9 +39,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (!s1)
 		return (NULL);
 	len = ft_strlen(s1);
-	while (flag_verificar(set, s1[i]) && s1[i])
+	while (str_chr(set, s1[i]) && s1[i])
 		i++;
-	while (len > 0 && flag_verificar(set, s1[len - 1]))
+	while (len > 0 && str_chr(set, s1[len - 1]))
 		len--;
 	if (len < i)
 		len = i;
@@ -53,3 +53,13 @@ char	*ft_strtrim(char const *s1, char const *set)
 	new[k] = '\0';
 	return (new);
 }
+/*int	main(void)
+{
+	char const 	*s1 = "12Hola12Hola12";
+	char const 	*set = "12";
+	char 		*result = ft_strtrim(s1, set);
+
+	printf("Frase resultante: %s\n", result);
+	free (result);
+	return (0);
+}*/

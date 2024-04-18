@@ -6,7 +6,7 @@
 /*   By: alvdelga <alvdelga@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 17:46:36 by alvdelga          #+#    #+#             */
-/*   Updated: 2024/03/18 17:55:38 by alvdelga         ###   ########.fr       */
+/*   Updated: 2024/04/17 17:35:03 by alvdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		b;
 	int		i;
 
+	i = 0;
 	if (!s1 || !s2)
 		return (NULL);
 	a = ft_strlen(s1);
 	b = ft_strlen(s2);
-	i = 0;
 	str = malloc((a + b + 1) * sizeof(char));
 	if (!str)
 		return (NULL);
@@ -40,3 +40,12 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	str[a] = '\0';
 	return (str);
 }
+/*int	main()
+{
+	char *a = "Hola";
+	char *b = " Mundo";
+
+	char *result = ft_strjoin(a, b);
+
+	printf("%s", result);
+}*/
