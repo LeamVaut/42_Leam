@@ -6,7 +6,7 @@
 /*   By: alvdelga <alvdelga@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 10:25:50 by alvdelga          #+#    #+#             */
-/*   Updated: 2024/04/18 14:09:27 by alvdelga         ###   ########.fr       */
+/*   Updated: 2024/04/18 15:20:58 by alvdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,14 @@ char	*ft_strtrim(char const *s1, char const *set)
 }
 /*int	main(void)
 {
+	char const 	*s2 = " ";
+	char const 	*set2 = "  ";
+	char 		*result2 = ft_strtrim(s2, set2);
+
+	printf("Frase resultante: %s\n", result2);
+	free (result2);
+		
+
 	char const 	*s1 = "12Hola12Hola12";
 	char const 	*set = "12";
 	char 		*result = ft_strtrim(s1, set);

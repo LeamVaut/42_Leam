@@ -6,12 +6,10 @@
 /*   By: alvdelga <alvdelga@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 10:26:09 by alvdelga          #+#    #+#             */
-/*   Updated: 2024/04/17 13:07:55 by alvdelga         ###   ########.fr       */
+/*   Updated: 2024/04/18 18:39:21 by alvdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdlib.h>
 #include "libft.h"
 
 static int	numstring(char const *s1, char c)
@@ -98,4 +96,37 @@ char	**ft_split(char const *s, char c)
 	if (dst == NULL)
 		return (NULL);
 	return (dividir(s, dst, c, l));
+}
+int	main(void)
+{
+	char const	*s = "Hola,,,,,,,,,que,,,,tal";
+	char		c = ',';
+	char		**split;
+	int			i;
+	int			numStrings = 0;
+
+	i = 0;
+	split = ft_split(s, c);
+
+	// Contar cuántos elementos no nulos hay en frases
+	while (split[numStrings] != NULL) {
+		numStrings++;
+	}
+
+	// Imprimir el número de frases almacenadas
+	printf("Número de frases almacenadas: %d\n", numStrings);
+
+	// Imprimir las frases almacenadas
+	for (int i = 0; i < numStrings; i++) {
+		printf("split[%d]: %s\n", i, split[i]);
+	}
+
+	// Liberar la memoria asignada
+	for (int i = 0; i < numStrings; i++) {
+		free(split[i]);
+	}
+
+	free(split);
+
+	return(0);
 }

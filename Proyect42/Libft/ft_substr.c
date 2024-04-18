@@ -6,7 +6,7 @@
 /*   By: alvdelga <alvdelga@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/15 18:21:35 by alvdelga          #+#    #+#             */
-/*   Updated: 2024/04/17 17:09:18 by alvdelga         ###   ########.fr       */
+/*   Updated: 2024/04/18 14:31:49 by alvdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	unsigned int	start = 2;
 	size_t	len = 10;
 	
-	printf("lenSTR: %zu\n", ft_strlen(str));
+	printf("len\rSTR: %zu\n", ft_strlen(str));
 
 	sub = ft_substr(str, start, len);
 
