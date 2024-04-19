@@ -12,6 +12,8 @@
 
 #include "libft.h"
 #include <unistd.h>
+#include <fcntl.h> // Para las funciones open y close
+#include <stdlib.h> // Para el sistema y la función exit
 
 void	ft_putnbr_fd(int n, int fd)
 {
