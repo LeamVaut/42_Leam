@@ -6,7 +6,7 @@
 #    By: alvdelga <alvdelga@student.42madrid>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/11 12:13:06 by alvdelga          #+#    #+#              #
-#    Updated: 2024/04/16 15:10:27 by alvdelga         ###   ########.fr        #
+#    Updated: 2024/04/20 13:05:02 by alvdelga         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,13 @@ SRC = ft_isalnum.c ft_isprint.c ft_memmove.c ft_strlcat.c ft_strrchr.c \
 		
  		  
 OBJ = $(SRC:.c=.o)
+
+BONUS_SRC = ft_lstnew_bonus.c ft_lstadd_back_bonus.c ft_lstsize_bonus.c ft_lstlast_bonus.c \
+			ft_lstadd_front_bonus.c ft_lstdelone_bonus.c ft_lstclear_bonus.c ft_lstiter_bonus.c \
+			ft_lstmap_bonus.c \
+
+BONUS_OBJ = $(BONUS_SRC:.c=.o)
+
 INCLUDE = libft.h
 
 all: $(NAME)
@@ -33,13 +40,18 @@ all: $(NAME)
 $(NAME): $(OBJ) $(INCLUDE)
 	$(LIB) $(NAME) $(OBJ)
 
+bonus: $(BONUS_OBJ) $(INCLUDE)
+	$(LIB) $(NAME) $(BONUS_OBJ)
+
 %.o: %.c
 	$(CC) $(CCFLAGS) -c -o $@ $<
 
 clean:
-	$(RM) $(OBJ)
+	$(RM) $(OBJ) $(BONUS_OBJ)
 
 fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
+
+.PHONY: all clean fclean re
