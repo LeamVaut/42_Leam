@@ -6,7 +6,7 @@
 /*   By: alvdelga <alvdelga@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 13:01:29 by alvdelga          #+#    #+#             */
-/*   Updated: 2024/04/20 13:05:21 by alvdelga         ###   ########.fr       */
+/*   Updated: 2024/04/20 13:29:54 by alvdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	t_list	*current;
 	t_list	*next;
 
+	if (lst == NULL || del == NULL)
+		return ;
 	current = *lst;
 	if (lst != NULL && del != NULL)
 	{

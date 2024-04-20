@@ -6,7 +6,7 @@
 /*   By: alvdelga <alvdelga@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 12:31:45 by alvdelga          #+#    #+#             */
-/*   Updated: 2024/04/20 12:33:06 by alvdelga         ###   ########.fr       */
+/*   Updated: 2024/04/20 14:00:50 by alvdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 //Toma como parámetro un nodo ’lst’ y libera la memoria del contenido
 //utilizando la función ’del’ dada como parámetro, además
 //de liberar el nodo. La memoria de ’next’ no debe liberarse.
-/* static void	ft_del_node_content(void *content)
+/*static void	ft_del_node_content(void *content)
 {
 	if (content != NULL)
 		free(content);
-} */
+}*/
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
@@ -29,44 +29,22 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *))
 		free(lst);
 	}
 }
-
-/*int	main(void)
+/*int main()
 {
-	// Crear algunos nodos de la lista para el ejemplo
-	t_list	node1;
-	t_list	node2;
-	t_list	node3;
-	t_list	*my_list;
+    // Creamos un nodo de lista y asignamos contenido
+    t_list *node = (t_list *)malloc(sizeof(t_list));
+    node->content = malloc(sizeof(int));
+    *(int *)(node->content) = 42;
+    node->next = NULL;
 
-	node1.content = "Nodo 1";
-	node1.next = &node2;
+    // Imprimimos el contenido antes de eliminarlo
+    printf("Contenido antes de eliminar: %d\n", *(int *)node->content);
 
-	node2.content = "Nodo 2";
-	node2.next = &node3;
+    // Eliminamos el contenido del nodo
+    ft_del_node_content(node->content);
 
-	node3.content = "Nodo 3";
-	node3.next = NULL;
-
-	// Pasa el puntero al primer nodo a ft_lstlast
-	my_list = ft_lstlast(&node1);
-
-	// Imprime el resultado
-	if (my_list != NULL)
-		printf("El último nodo es: %s\n", (char *)my_list->content);
-	else
-		printf("La lista está vacía.\n");
-
-	// Llamamos a la función para eliminar el último nodo
-	ft_lstdelone(my_list, ft_del_node_content);
-
-	// Volvemos a pasa el puntero al primer nodo a ft_lstlast
-	my_list = ft_lstlast(&node1);
-
-	// Imprime el resultado
-	if (my_list != NULL)
-		printf("El último nodo ahora es: %s\n", (char *)my_list->content);
-	else
-		printf("La lista está vacía.\n");
-
-	return (0);
+    // Eliminamos el nodo
+    ft_lstdelone(node, NULL);
+	printf("Nodo eliminado correctamente\n");
+    return 0;
 }*/
