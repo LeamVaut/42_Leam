@@ -112,16 +112,16 @@ char	*get_next_line(int fd)
 	return (output_text);
 }
 
-// int main()
-// {
-// 	int fd = open("txt.txt", O_RDONLY);
-// 	char *a;
+int main()
+{
+	int fd = open("txt.txt", O_RDONLY);
+	char *a;
 
-// 	while ((a = get_next_line(fd)))
-// 	{
-// 		printf("%s", a);
-// 	}
+	while ((a = get_next_line(fd)))
+	{
+		printf("%s", a);
+	}
 
-// 	printf("\n%s", get_next_line(fd));
-//     return 0;
-// }
+	printf("\n%s", get_next_line(fd));
+    return 0;
+}
