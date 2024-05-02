@@ -12,6 +12,53 @@
 
 #include "get_next_line.h"
 
+char	*clean_first_line(char *text)
+{
+	size_t		i;
+	int		j;
+	char	*str;
+
+	i = 0;
+	j = 0;
+	while (text[i] && text[i] != '\n')
+		i++;
+	if (!text[i])
+	{
+		free (text);
+		return (NULL);
+	}
+	str = ft_calloc((ft_strlen(text) - i + 1), sizeof(*text));
+	if (!str)
+		return (NULL);
+	while (text[++i])
+		str[j++] = text[i];
+	str[j] = '\0';
+	free (text);
+	return (str);
+}
+
+char	*get_line(char *text)
+{
+	size_t		i;
+	char	*str;
+
+	i = 0;
+	if (!text[i])
+		return (NULL);
+	while (text[i] && text[i] != '\n')
+		i++;
+	str = ft_calloc(i + 2, sizeof(char));
+	i = 0;
+	while (text[i] && text[i] != '\n')
+	{
+		str[i] = text[i];
+		i++;
+	}
+	if (text[i] && text[i] == '\n')
+		str[i++] = '\n';
+	return (str);
+}
+
 char	*ft_join_and_free(char *text, char *buffer)
 {
 	char	*temp;
@@ -50,53 +97,6 @@ char	*read_first_line(int fd, char *text)
 	return (text);
 }
 
-char	*get_line(char *text)
-{
-	size_t		i;
-	char	*str;
-
-	i = 0;
-	if (!text[i])
-		return (NULL);
-	while (text[i] && text[i] != '\n')
-		i++;
-	str = ft_calloc(i + 2, sizeof(char));
-	i = 0;
-	while (text[i] && text[i] != '\n')
-	{
-		str[i] = text[i];
-		i++;
-	}
-	if (text[i] && text[i] == '\n')
-		str[i++] = '\n';
-	return (str);
-}
-
-char	*clean_first_line(char *text)
-{
-	size_t		i;
-	int		j;
-	char	*str;
-
-	i = 0;
-	j = 0;
-	while (text[i] && text[i] != '\n')
-		i++;
-	if (!text[i])
-	{
-		free (text);
-		return (NULL);
-	}
-	str = ft_calloc((ft_strlen(text) - i + 1), sizeof(*text));
-	if (!str)
-		return (NULL);
-	while (text[++i])
-		str[j++] = text[i];
-	str[j] = '\0';
-	free (text);
-	return (str);
-}
-
 char	*get_next_line(int fd)
 {
 	char		*output_text;
@@ -112,17 +112,16 @@ char	*get_next_line(int fd)
 	return (output_text);
 }
 
-int main()
-{
-	int fd = open("a.txt", O_RDONLY);
-	char *a;
+// int main()
+// {
+// 	int fd = open("txt.txt", O_RDONLY);
+// 	char *a;
 
-	while ((a = get_next_line(fd)))
-	{
-		printf("%s", a);
-	}
+// 	while ((a = get_next_line(fd)))
+// 	{
+// 		printf("%s", a);
+// 	}
 
-	printf("\n%s", get_next_line(fd));
-
-	return 0;
-}
+// 	printf("\n%s", get_next_line(fd));
+//     return 0;
+// }
