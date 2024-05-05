@@ -1,6 +1,0 @@
-#ifndef CURSUS_42MADRID_LIBRARY_H
-#define CURSUS_42MADRID_LIBRARY_H
-
-void hello(void);
-
-#endif //CURSUS_42MADRID_LIBRARY_H

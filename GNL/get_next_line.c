@@ -6,13 +6,13 @@
 /*   By: alvdelga <alvdelga@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 16:01:20 by alvdelga          #+#    #+#             */
-/*   Updated: 2024/04/22 16:30:52 by alvdelga         ###   ########.fr       */
+/*   Updated: 2024/05/05 13:51:38 by alvdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*clean_first_line(char *text)
+char	*put_next_line(char *text)
 {
 	size_t		i;
 	int		j;
@@ -68,7 +68,7 @@ char	*ft_join_and_free(char *text, char *buffer)
 	return (temp);
 }
 
-char	*read_first_line(int fd, char *text)
+char	*read_buffer(int fd, char *text)
 {
 	char	*buffer;
 	int		bytes_read;
@@ -104,14 +104,30 @@ char	*get_next_line(int fd)
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	text = read_first_line(fd, text);
+	text = read_buffer(fd, text);
 	if (!text)
 		return (NULL);
 	output_text = get_line(text);
-	text = clean_first_line(text);
+	text = put_next_line(text);
 	return (output_text);
 }
 
+// int main()
+// {
+// 	int fd = open("txt2.txt", O_RDONLY);
+// 	char *a;
+
+// 	while ((a = get_next_line(fd)))
+//  	{
+//  		printf("%s", a);
+// 		free(a);
+//  	}
+
+//  	printf("\n%s", get_next_line(fd));
+// 	close(fd);
+//      return 0;
+// // valgrind --leak-check=full ./a.out
+// }
 int main()
 {
 	int fd = open("txt.txt", O_RDONLY);
