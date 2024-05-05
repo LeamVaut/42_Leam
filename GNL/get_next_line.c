@@ -128,9 +128,11 @@ char	*get_next_line(int fd)
 //      return 0;
 // // valgrind --leak-check=full ./a.out
 // }
-int main()
+int main(int argc, char **argv)
 {
-	int fd = open("txt.txt", O_RDONLY);
+	if (argc < 2)
+		return (1);
+	int fd = open(argv[1], O_RDONLY);
 	char *a;
 
 	while ((a = get_next_line(fd)))
