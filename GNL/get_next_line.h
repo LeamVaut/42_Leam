@@ -14,7 +14,7 @@
 # define GET_NEXT_LINE_H
 
 # ifndef BUFFER_SIZE
-#  define  BUFFER_SIZE 5000
+#  define  BUFFER_SIZE 1
 # endif
 
 # include <unistd.h>
@@ -28,8 +28,8 @@ char	*ft_strjoin(char const *s1, char const *s2);
 size_t	ft_strlen(const char *str);
 char	*ft_strchr(const char *str, int c);
 void	*ft_calloc(size_t count, size_t size);
-char	*read_first_line(int fd, char *text);
+//char	*read_buffer(int fd, char *text);
 char	*get_line(char *text);
-char	*clean_first_line(char *text);
+//char	*set_next_line(char *text);
 
 #endif

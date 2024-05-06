@@ -12,7 +12,7 @@
 
 #include "get_next_line.h"
 
-char	*put_next_line(char *text)
+char	*set_next_line(char *text)
 {
 	size_t		i;
 	int		j;
@@ -108,26 +108,26 @@ char	*get_next_line(int fd)
 	if (!text)
 		return (NULL);
 	output_text = get_line(text);
-	text = put_next_line(text);
+	text = set_next_line(text);
 	return (output_text);
 }
 
-// int main()
-// {
-// 	int fd = open("txt2.txt", O_RDONLY);
-// 	char *a;
+/*int main()
+{
+	int fd = open("txt2.txt", O_RDONLY);
+	char *a;
 
-// 	while ((a = get_next_line(fd)))
-//  	{
-//  		printf("%s", a);
-// 		free(a);
-//  	}
+	while ((a = get_next_line(fd)))
+ 	{
+ 		printf("%s", a);
+		free(a);
+ 	}
 
-//  	printf("\n%s", get_next_line(fd));
-// 	close(fd);
-//      return 0;
-// // valgrind --leak-check=full ./a.out
-// }
+ 	printf("\n%s", get_next_line(fd));
+	close(fd);
+     return 0;
+// valgrind --leak-check=full ./a.out
+}
 int main(int argc, char **argv)
 {
 	if (argc < 2)
@@ -142,4 +142,4 @@ int main(int argc, char **argv)
 
 	printf("\n%s", get_next_line(fd));
     return 0;
-}
+}*/
