@@ -14,22 +14,19 @@
 # define GET_NEXT_LINE_H
 
 # ifndef BUFFER_SIZE
-#  define  BUFFER_SIZE 1
+#  define  BUFFER_SIZE 100
 # endif
 
 # include <unistd.h>
 # include <stdio.h>
-# include <stdlib.h>
+# include <stdlib.h>//malloc, free
 # include <stdint.h>
-# include <fcntl.h>
+# include <stddef.h>//NULL
 
 char	*get_next_line(int fd);
 char	*ft_strjoin(char const *s1, char const *s2);
 size_t	ft_strlen(const char *str);
 char	*ft_strchr(const char *str, int c);
 void	*ft_calloc(size_t count, size_t size);
-//char	*read_buffer(int fd, char *text);
-char	*get_line(char *text);
-//char	*set_next_line(char *text);
 
 #endif
