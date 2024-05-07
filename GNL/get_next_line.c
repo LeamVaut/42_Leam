@@ -12,7 +12,7 @@
 
 #include "get_next_line.h"
 
-char	*set_next_line(char *text)
+static char	*set_next_line(char *text)
 {
 	size_t		i;
 	int		j;
@@ -37,7 +37,7 @@ char	*set_next_line(char *text)
 	return (str);
 }
 
-char	*get_line_on_buffer(char *text)
+static char	*get_line_on_buffer(char *text)
 {
 	size_t		i;
 	char	*str;
@@ -59,7 +59,7 @@ char	*get_line_on_buffer(char *text)
 	return (str);
 }
 
-char	*ft_join_and_free(char *text, char *buffer)
+static char	*ft_join_and_free(char *text, char *buffer)
 {
 	char	*temp;
 
@@ -68,7 +68,7 @@ char	*ft_join_and_free(char *text, char *buffer)
 	return (temp);
 }
 
-char	*read_buffer(int fd, char *text)
+static char	*read_buffer(int fd, char *text)
 {
 	char	*buffer;
 	int		bytes_read;
