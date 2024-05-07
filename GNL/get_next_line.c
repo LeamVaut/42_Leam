@@ -30,14 +30,14 @@ char	*set_next_line(char *text)
 	str = ft_calloc((ft_strlen(text) - i + 1), sizeof(*text));
 	if (!str)
 		return (NULL);
-	while (text[++i])
+	while (text[++i] != '\0')
 		str[j++] = text[i];
 	str[j] = '\0';
 	free (text);
 	return (str);
 }
 
-char	*get_line(char *text)
+char	*get_line_on_buffer(char *text)
 {
 	size_t		i;
 	char	*str;
@@ -88,7 +88,7 @@ char	*read_buffer(int fd, char *text)
 			free (buffer);
 			return (NULL);
 		}
-		buffer[bytes_read] = 0;
+		buffer[bytes_read] = '\0';
 		text = ft_join_and_free(text, buffer);
 		if (ft_strchr(text, '\n'))
 			break ;
@@ -107,7 +107,7 @@ char	*get_next_line(int fd)
 	text = read_buffer(fd, text);
 	if (!text)
 		return (NULL);
-	output_text = get_line(text);
+	output_text = get_line_on_buffer(text);
 	text = set_next_line(text);
 	return (output_text);
 }
@@ -127,19 +127,16 @@ char	*get_next_line(int fd)
 	close(fd);
      return 0;
 // valgrind --leak-check=full ./a.out
-}
-int main(int argc, char **argv)
+}*/
+/*int main(int argc, char **argv)
 {
-	if (argc < 2)
-		return (1);
-	int fd = open(argv[1], O_RDONLY);
-	char *a;
-
-	while ((a = get_next_line(fd)))
+	int fd = open(argv[1], O_CREAT);
+	char *result;
+	printf("%d\n", fd);
+	while ((result = get_next_line(fd)))
 	{
-		printf("%s", a);
+		printf("%s\n", result);
+		free(result);
 	}
-
-	printf("\n%s", get_next_line(fd));
-    return 0;
+	return (0);
 }*/

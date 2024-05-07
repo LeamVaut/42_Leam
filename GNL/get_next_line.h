@@ -14,7 +14,7 @@
 # define GET_NEXT_LINE_H
 
 # ifndef BUFFER_SIZE
-#  define  BUFFER_SIZE 100
+#  define  BUFFER_SIZE 41
 # endif
 
 # include <unistd.h>
@@ -22,6 +22,7 @@
 # include <stdlib.h>//malloc, free
 # include <stdint.h>
 # include <stddef.h>//NULL
+# include <fcntl.h>//open
 
 char	*get_next_line(int fd);
 char	*ft_strjoin(char const *s1, char const *s2);
