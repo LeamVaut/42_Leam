@@ -6,7 +6,7 @@
 /*   By: alvdelga <alvdelga@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 16:01:20 by alvdelga          #+#    #+#             */
-/*   Updated: 2024/04/22 16:30:52 by alvdelga         ###   ########.fr       */
+/*   Updated: 2024/05/07 18:50:20 by alvdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void	ft_bzero(void *str, size_t n)
 	}
 }
 
-void    *ft_calloc(size_t count, size_t size)
+void	*ft_calloc(size_t count, size_t size)
 {
 	void	*result;
 

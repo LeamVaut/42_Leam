@@ -6,7 +6,7 @@
 /*   By: alvdelga <alvdelga@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 16:01:20 by alvdelga          #+#    #+#             */
-/*   Updated: 2024/05/05 13:51:38 by alvdelga         ###   ########.fr       */
+/*   Updated: 2024/05/07 18:47:07 by alvdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static char	*set_next_line(char *text)
 {
-	size_t		i;
+	size_t	i;
 	int		j;
 	char	*str;
 
@@ -40,7 +40,7 @@ static char	*set_next_line(char *text)
 static char	*get_line_on_buffer(char *text)
 {
 	size_t		i;
-	char	*str;
+	char		*str;
 
 	i = 0;
 	if (!text[i])
