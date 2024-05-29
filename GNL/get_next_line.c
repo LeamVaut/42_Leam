@@ -73,13 +73,15 @@ static char	*read_buffer(int fd, char *text)
 	char	*buffer;
 	int		bytes_read;
 
+	if (BUFFER_SIZE <= 0)
+		return (NULL);
 	if (!text)
 		text = ft_calloc(1, 1);
 	buffer = malloc((BUFFER_SIZE + 1) * sizeof(char));
 	if (!buffer)
 		return (NULL);
 	bytes_read = 1;
-	while (bytes_read > 0)
+	while (bytes_read > 0 && !ft_strchr(text, '\n'))
 	{
 		bytes_read = read(fd, buffer, BUFFER_SIZE);
 		if (bytes_read == -1)
@@ -90,8 +92,6 @@ static char	*read_buffer(int fd, char *text)
 		}
 		buffer[bytes_read] = '\0';
 		text = ft_join_and_free(text, buffer);
-		if (ft_strchr(text, '\n'))
-			break ;
 	}
 	free (buffer);
 	return (text);
@@ -111,10 +111,9 @@ char	*get_next_line(int fd)
 	text = set_next_line(text);
 	return (output_text);
 }
-
 /*int main()
 {
-	int fd = open("txt2.txt", O_RDONLY);
+	int fd = open("files/txt.txt", O_RDONLY);
 	char *a;
 
 	while ((a = get_next_line(fd)))
@@ -122,11 +121,9 @@ char	*get_next_line(int fd)
  		printf("%s", a);
 		free(a);
  	}
-
- 	printf("\n%s", get_next_line(fd));
+ 	//printf("\n%s", get_next_line(fd));
 	close(fd);
      return 0;
-// valgrind --leak-check=full ./a.out
 }*/
 /*int main(int argc, char **argv)
 {

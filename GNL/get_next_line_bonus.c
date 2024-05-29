@@ -73,13 +73,15 @@ char	*read_buffer(int fd, char *text)
 	char	*buffer;
 	int		bytes_read;
 
+	if (BUFFER_SIZE <= 0)
+		return (NULL);
 	if (!text)
 		text = ft_calloc(1, 1);
 	buffer = malloc((BUFFER_SIZE + 1) * sizeof(char));
 	if (!buffer)
 		return (NULL);
 	bytes_read = 1;
-	while (bytes_read > 0)
+	while (bytes_read > 0 && !ft_strchr(text, '\n'))
 	{
 		bytes_read = read(fd, buffer, BUFFER_SIZE);
 		if (bytes_read == -1)
@@ -90,8 +92,6 @@ char	*read_buffer(int fd, char *text)
 		}
 		buffer[bytes_read] = '\0';
 		text = ft_join_and_free(text, buffer);
-		if (ft_strchr(text, '\n'))
-			break ;
 	}
 	free (buffer);
 	return (text);
@@ -111,57 +111,30 @@ char	*get_next_line(int fd)
 	text[fd] = set_next_line(text[fd]);
 	return (output_text);
 }
-
-/*int main()
-{
-	int fd = open("txt.txt", O_RDONLY);
-	char *a;
-
-	while ((a = get_next_line(fd)))
- 	{
- 		printf("%s", a);
-		free(a);
- 	}
-
- 	printf("\n%s", get_next_line(fd));
-	close(fd);
-     return 0;
-// valgrind --leak-check=full ./a.out
-}*/
-/*int main(int argc, char **argv)
-{
-	int fd = open(argv[1], O_CREAT);
-	char *result;
-	printf("%d\n", fd);
-	while ((result = get_next_line(fd)))
-	{
-		printf("%s\n", result);
-		free(result);
-	}
-	return (0);
-}*/
 /*int main()
 {
     int fd = open("files/txt.txt", O_CREAT);
-    int fdb = open("files/txt3.txt", O_CREAT);
-    int fdc = open("files/txtt.txt", O_CREAT);
+    int fdb = open("files/txt.txt", O_CREAT);
+    int fdc = open("files/txt.txt", O_CREAT);
     char *a;
 
     printf("%d\n", fd);
     printf("%d\n", fdb);
     printf("%d\n", fdc);
-    // while ((a = get_next_line(fd)))
-    // {
-    //     printf("%s", a);
-	// 	free(a);
-    // }  
-
-    printf("%s\n", get_next_line(fd));
-	printf("%s\n", get_next_line(fdb));
-	printf("%s\n", get_next_line(fdc));
-	printf("%s\n", get_next_line(fd));
-	printf("%s\n", get_next_line(fd));
-	printf("%u\n", get_next_line(fd));
-
+    while ((a = get_next_line(fd)))
+    {
+        printf("%s", a);
+		free(a);
+    }
+	 while ((a = get_next_line(fdb)))
+    {
+        printf("\n%s", a);
+		free(a);
+    }
+	 while ((a = get_next_line(fdc)))
+    {
+        printf("\n%s", a);
+		free(a);
+    }  
     return 0;  
 }*/
