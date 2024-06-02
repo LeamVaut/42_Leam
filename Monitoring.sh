@@ -14,7 +14,7 @@ trap ctrl_c SIGINT
 
 function ctrl_c(){
 
-	echo -e "\n${yellowColour}[+]${endColour}${grayColour} Saliendo...${endColour}"; sleep 1
+	echo -e "\n${yellowColour}[+]${endColour}${grayColour} Saliendo...${endColour}"; sleep 2
 }
 
  # Arquitectura y versión del kernel
@@ -49,7 +49,7 @@ function ctrl_c(){
  connections=$(ss -tun | grep ESTAB | wc -l)
  
  # Obtener el número de usuarios actualmente logueados
- users=$(who | wc -l)
+ users=$(who | awk '{print $1}' | sort -u | wc -l)
  
  # Obtener la dirección IPv4 y la MAC
  ip=$(hostname -I | awk '{print $1}')
@@ -73,5 +73,4 @@ function ctrl_c(){
  # Sudo: $sudo_cmds cmd"
  
  # Mostrar el mensaje usando wall
-
  echo "$message"
